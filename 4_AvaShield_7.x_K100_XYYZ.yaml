@@ -17,7 +17,7 @@ axes:
   x:
     steps_per_mm: 40
     max_rate_mm_per_min: 20000.000
-    acceleration_mm_per_sec2: 1000.000
+    acceleration_mm_per_sec2: 400.000
     max_travel_mm: 1000.000
     soft_limits: true
     homing:
@@ -46,7 +46,7 @@ axes:
   y:
     steps_per_mm: 40
     max_rate_mm_per_min: 20000.000
-    acceleration_mm_per_sec2: 1000.000
+    acceleration_mm_per_sec2: 400.000
     max_travel_mm: 900.000
     soft_limits: true
     homing:
