@@ -103,7 +103,7 @@ axes:
     #4 micro-steps for 1.8 degrees
     #If 16 teeth on motor / 20 teeth on the roller : 2.778 (4/1.8*20/16)
     #If same teeth on motor and roller : 2.222
-    steps_per_mm: 2,778
+    steps_per_mm: 2.778
     max_rate_mm_per_min: 53200.000
     acceleration_mm_per_sec2: 100000.000
     max_travel_mm: 360.000
