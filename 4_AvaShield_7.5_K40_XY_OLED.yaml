@@ -1,5 +1,5 @@
 name: K40_AvaShield
-board: 4_Ava_Shield_7.x_XYA
+board: 4_Ava_Shield_7.x_XY
 
 kinematics:
   Cartesian:
@@ -71,19 +71,16 @@ axes:
         direction_pin: I2SO.5:low
         disable_pin: I2SO.4
 
-  a:
-    #4 micro-steps for 1.8 degrees
-    #If 16 teeth on motor / 20 teeth on the roller : 2.778 (4/1.8*20/16)
-    #If same teeth on motor and roller : 2.222
-    steps_per_mm: 2.778
-    max_rate_mm_per_min: 53200.000
-    acceleration_mm_per_sec2: 100000.000
-    max_travel_mm: 360.000
+  z:
+    steps_per_mm: 1000.000
+    max_rate_mm_per_min: 200.000
+    acceleration_mm_per_sec2: 1000.000
+    max_travel_mm: 20.000
     soft_limits: false
     homing:
-      cycle: 0
+      cycle: 
       positive_direction: true
-      mpos_mm: 0.000
+      mpos_mm: 9.500
       feed_mm_per_min: 100.000
       seek_mm_per_min: 100.000
       settle_ms: 250.000
@@ -91,16 +88,18 @@ axes:
       feed_scaler: 5.000
 
     motor0:
-      limit_neg_pin: gpio.32:low
+      limit_neg_pin: gpio.35:low
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
-      hard_limits: false
-      pulloff_mm: 0.000
+      hard_limits: true
+      pulloff_mm: 9.500
       stepstick:
-        ms3_pin: I2SO.15
-        step_pin: I2SO.14
-        direction_pin: I2SO.13
-        disable_pin: I2SO.12
+        ms3_pin: I2SO.11
+        step_pin: I2SO.10
+        direction_pin: I2SO.9:low
+        disable_pin: I2SO.8
+    motor1:
+      null_motor:
 
 i2so:
   bck_pin: gpio.22
@@ -114,6 +113,17 @@ spi:
 
 sdcard:
   cs_pin: gpio.5
+
+i2c0:
+   sda_pin: gpio.33
+   scl_pin: gpio.25
+
+oled:
+   i2c_num: 0
+   i2c_address: 60
+   width: 128
+   height: 64
+   radio_delay_ms: 1000
 
 control:
   safety_door_pin: gpio.27:low:pu
