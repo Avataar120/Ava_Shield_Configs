@@ -1,5 +1,5 @@
 name: K40_AvaShield
-board: 4_Ava_Shield_8.1_XYZA_OLED
+board: 4_Ava_Shield_8.x_XYZA_OLED
 
 kinematics:
   Cartesian:
