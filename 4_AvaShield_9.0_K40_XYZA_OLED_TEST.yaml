@@ -107,9 +107,9 @@ axes:
       
 
   z:
-    steps_per_mm: 1000.000
-    max_rate_mm_per_min: 200.000
-    acceleration_mm_per_sec2: 1000.000
+    steps_per_mm: 78.74
+    max_rate_mm_per_min: 20000.000
+    acceleration_mm_per_sec2: 2000.000
     max_travel_mm: 20.000
     soft_limits: false
     homing:
@@ -128,13 +128,72 @@ axes:
       limit_all_pin: NO_PIN
       hard_limits: true
       pulloff_mm: 9.500
-      stepstick:
-        ms3_pin: I2SO.11
-        step_pin: I2SO.10
-        direction_pin: I2SO.9:low
-        disable_pin: I2SO.8
-    motor1:
-      null_motor:
+
+      tmc_2209:
+        uart_num: 1     
+        addr: 2
+        r_sense_ohms: 0.110
+        run_amps: 0.6
+        hold_amps: 0.2
+        microsteps: 8
+        stallguard: 0
+        stallguard_debug: false
+        toff_disable: 0
+        toff_stealthchop: 5
+        toff_coolstep: 3
+        run_mode: CoolStep 
+        homing_mode: CoolStep 
+        use_enable: false
+        direction_pin: i2so.9:low
+        step_pin: i2so.10
+        disable_pin: i2so.8
+
+
+  a:
+    #4 micro-steps for 1.8 degrees
+    #If 16 teeth on motor / 20 teeth on the roller : 2.778 (4/1.8*20/16)
+    #If same teeth on motor and roller : 2.222
+    steps_per_mm: 78.74
+    max_rate_mm_per_min: 20000.000
+    acceleration_mm_per_sec2: 2000.000
+    max_travel_mm: 360.000
+    soft_limits: false
+    homing:
+      cycle: 0
+      positive_direction: true
+      mpos_mm: 0.000
+      feed_mm_per_min: 100.000
+      seek_mm_per_min: 100.000
+      settle_ms: 250.000
+      seek_scaler: 1.500
+      feed_scaler: 5.000
+
+    motor0:
+      limit_neg_pin: gpio.32:low:pu
+      limit_pos_pin: NO_PIN
+      limit_all_pin: NO_PIN
+      hard_limits: false
+      pulloff_mm: 0.000
+      
+      tmc_2209:
+        uart_num: 1     
+        addr: 3
+        r_sense_ohms: 0.110
+        run_amps: 0.6
+        hold_amps: 0.2
+        microsteps: 8
+        stallguard: 0
+        stallguard_debug: false
+        toff_disable: 0
+        toff_stealthchop: 5
+        toff_coolstep: 3
+        run_mode: CoolStep 
+        homing_mode: CoolStep 
+        use_enable: false
+        direction_pin: i2so.13
+        step_pin: i2so.14
+        disable_pin: i2so.12
+
 
 i2so:
   bck_pin: gpio.22
