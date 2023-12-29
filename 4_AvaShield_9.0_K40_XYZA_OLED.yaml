@@ -57,7 +57,7 @@ axes:
         toff_stealthchop: 5
         toff_coolstep: 3
         run_mode: CoolStep 
-        homing_mode: StallGuard 
+        homing_mode: CoolStep 
         use_enable: false
         direction_pin: i2so.1
         step_pin: i2so.2
@@ -101,7 +101,7 @@ axes:
         toff_stealthchop: 5
         toff_coolstep: 3
         run_mode: CoolStep 
-        homing_mode: StallGuard 
+        homing_mode: CoolStep 
         use_enable: true
         direction_pin: i2so.5
         step_pin: i2so.6
