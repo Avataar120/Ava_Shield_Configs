@@ -1,5 +1,5 @@
 name: K40_AvaShield
-board: 4_Ava_Shield_8.x_XY_OLED
+board: 4_TEST_Ava_Shield_9.X_XYZA_OLED
 
 kinematics:
   Cartesian:
@@ -49,15 +49,15 @@ axes:
         addr: 0
         r_sense_ohms: 0.110
         run_amps: 0.6
-        hold_amps: 0.2
+        hold_amps: 0.4
         microsteps: 8
-        stallguard: 100
+        stallguard: 0
         stallguard_debug: true
         toff_disable: 0
         toff_stealthchop: 5
         toff_coolstep: 3
-        run_mode: CoolStep 
-        homing_mode: StallGuard 
+        run_mode: Coolstep 
+        homing_mode: Coolstep 
         use_enable: false
         direction_pin: i2so.1
         step_pin: i2so.2
@@ -93,15 +93,15 @@ axes:
         addr: 1
         r_sense_ohms: 0.110
         run_amps: 0.6
-        hold_amps: 0.2
+        hold_amps: 0.4
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
         toff_disable: 0
         toff_stealthchop: 5
         toff_coolstep: 3
-        run_mode: CoolStep 
-        homing_mode: StallGuard 
+        run_mode: Coolstep 
+        homing_mode: Coolstep 
         use_enable: true
         direction_pin: i2so.5
         step_pin: i2so.6
@@ -136,15 +136,15 @@ axes:
         addr: 2
         r_sense_ohms: 0.110
         run_amps: 0.6
-        hold_amps: 0.2
-        microsteps: 8
+        hold_amps: 0.4
+        microsteps: 4
         stallguard: 0
         stallguard_debug: false
         toff_disable: 0
         toff_stealthchop: 5
         toff_coolstep: 3
-        run_mode: CoolStep 
-        homing_mode: StallGuard 
+        run_mode: Coolstep 
+        homing_mode: Coolstep 
         use_enable: true
         direction_pin: i2so.9:low
         step_pin: i2so.10
@@ -182,15 +182,15 @@ axes:
         addr: 3
         r_sense_ohms: 0.110
         run_amps: 0.6
-        hold_amps: 0.2
-        microsteps: 8
+        hold_amps: 0.4
+        microsteps: 4
         stallguard: 0
         stallguard_debug: false
         toff_disable: 0
         toff_stealthchop: 5
         toff_coolstep: 3
-        run_mode: CoolStep 
-        homing_mode: StallGuard 
+        run_mode: Coolstep 
+        homing_mode: Coolstep 
         use_enable: true
         direction_pin: i2so.13
         step_pin: i2so.14
