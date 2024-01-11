@@ -25,7 +25,7 @@ axes:
     max_rate_mm_per_min: 20000.000
     acceleration_mm_per_sec2: 2000.000
     max_travel_mm: 310.000
-    soft_limits: false
+    soft_limits: true
     homing:
       cycle: 1
       positive_direction: false
@@ -41,24 +41,24 @@ axes:
       limit_neg_pin: gpio.39:low
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
-      hard_limits: false
+      hard_limits: true
       pulloff_mm: 5.000
       
       tmc_2209:
         uart_num: 1     
         addr: 0
-        r_sense_ohms: 0.110
+        r_sense_ohms: 0.220
         run_amps: 0.6
         hold_amps: 0.2
         microsteps: 8
-        stallguard: 100
-        stallguard_debug: true
+        stallguard: 0
+        stallguard_debug: false
         toff_disable: 0
         toff_stealthchop: 5
         toff_coolstep: 3
         run_mode: CoolStep 
         homing_mode: CoolStep 
-        use_enable: false
+        use_enable: true
         direction_pin: i2so.1
         step_pin: i2so.2
         disable_pin: i2so.0
@@ -69,7 +69,7 @@ axes:
     max_rate_mm_per_min: 20000.000
     acceleration_mm_per_sec2: 2000.000
     max_travel_mm: 210.000
-    soft_limits: false
+    soft_limits: true
     homing:
       cycle: 1
       positive_direction: false
@@ -85,13 +85,13 @@ axes:
       limit_neg_pin: gpio.34:low
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
-      hard_limits: false
+      hard_limits: true
       pulloff_mm: 5.000
       
       tmc_2209:
         uart_num: 1     
         addr: 1
-        r_sense_ohms: 0.110
+        r_sense_ohms: 0.220
         run_amps: 0.6
         hold_amps: 0.2
         microsteps: 8
@@ -134,7 +134,7 @@ axes:
       tmc_2209:
         uart_num: 1     
         addr: 2
-        r_sense_ohms: 0.110
+        r_sense_ohms: 0.220
         run_amps: 0.8
         hold_amps: 0.2
         microsteps: 4
@@ -180,7 +180,7 @@ axes:
       tmc_2209:
         uart_num: 1     
         addr: 3
-        r_sense_ohms: 0.110
+        r_sense_ohms: 0.220
         run_amps: 0.6
         hold_amps: 0.2
         microsteps: 8
