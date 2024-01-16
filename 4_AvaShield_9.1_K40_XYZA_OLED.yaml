@@ -1,0 +1,270 @@
+#Attention : between board 9.1 (proto board) and boards with revision > 9.1, X direction has been changed
+#Therefore connfig files are not compatible between 9.1 and > 9.1
+name: K40_AvaShield
+board: 4_Ava_Shield_9.1_XYZA_OLED
+
+kinematics:
+  Cartesian:
+
+stepping:
+  engine: I2S_STATIC
+  idle_ms: 255
+  dir_delay_us: 1
+  pulse_us: 6
+  disable_delay_us: 0
+
+uart1:
+  txd_pin: gpio.12
+  rxd_pin: gpio.26
+  baud: 115200
+  mode: 8N1
+
+axes:
+  shared_stepper_disable_pin: NO_PIN
+
+  x:
+    steps_per_mm: 78.74
+    max_rate_mm_per_min: 20000.000
+    acceleration_mm_per_sec2: 2000.000
+    max_travel_mm: 310.000
+    soft_limits: true
+    homing:
+      cycle: 1
+      positive_direction: false
+      mpos_mm: 0.000
+      seek_mm_per_min: 2500.000
+      feed_mm_per_min: 200.000
+      seek_scaler: 1.500
+      feed_scaler: 5.000
+      settle_ms: 250.000
+
+
+    motor0:
+      limit_neg_pin: gpio.39:low
+      limit_pos_pin: NO_PIN
+      limit_all_pin: NO_PIN
+      hard_limits: true
+      pulloff_mm: 5.000
+      
+      tmc_2209:
+        uart_num: 1     
+        addr: 0
+        r_sense_ohms: 0.220
+        run_amps: 0.6
+        hold_amps: 0.2
+        microsteps: 8
+        stallguard: 0
+        stallguard_debug: false
+        toff_disable: 0
+        toff_stealthchop: 5
+        toff_coolstep: 3
+        run_mode: CoolStep 
+        homing_mode: CoolStep 
+        use_enable: true
+        direction_pin: i2so.1
+        step_pin: i2so.2
+        disable_pin: i2so.0
+
+
+  y:
+    steps_per_mm: 78.74
+    max_rate_mm_per_min: 20000.000
+    acceleration_mm_per_sec2: 2000.000
+    max_travel_mm: 210.000
+    soft_limits: true
+    homing:
+      cycle: 1
+      positive_direction: false
+      mpos_mm: 0.000
+      seek_mm_per_min: 2500.000
+      feed_mm_per_min: 200.000
+      seek_scaler: 1.500
+      feed_scaler: 5.000
+      settle_ms: 250.000
+
+
+    motor0:
+      limit_neg_pin: gpio.34:low
+      limit_pos_pin: NO_PIN
+      limit_all_pin: NO_PIN
+      hard_limits: true
+      pulloff_mm: 5.000
+      
+      tmc_2209:
+        uart_num: 1     
+        addr: 1
+        r_sense_ohms: 0.220
+        run_amps: 0.6
+        hold_amps: 0.2
+        microsteps: 8
+        stallguard: 0
+        stallguard_debug: false
+        toff_disable: 0
+        toff_stealthchop: 5
+        toff_coolstep: 3
+        run_mode: CoolStep 
+        homing_mode: CoolStep 
+        use_enable: true
+        direction_pin: i2so.5
+        step_pin: i2so.6
+        disable_pin: i2so.4
+      
+
+  z:
+    steps_per_mm: 1000
+    max_rate_mm_per_min: 200.000
+    acceleration_mm_per_sec2: 1000.000
+    max_travel_mm: 20.000
+    soft_limits: false
+    homing:
+      cycle: 2
+      positive_direction: true
+      mpos_mm: 9.500
+      seek_mm_per_min: 100.000
+      feed_mm_per_min: 100.000
+      settle_ms: 250.000
+      seek_scaler: 1.500
+      feed_scaler: 5.000
+
+    motor0:
+      limit_neg_pin: gpio.35:low
+      limit_pos_pin: NO_PIN
+      limit_all_pin: NO_PIN
+      hard_limits: true
+      pulloff_mm: 9.500
+
+      tmc_2209:
+        uart_num: 1     
+        addr: 2
+        r_sense_ohms: 0.220
+        run_amps: 0.8
+        hold_amps: 0.2
+        microsteps: 4
+        stallguard: 0
+        stallguard_debug: false
+        toff_disable: 0
+        toff_stealthchop: 5
+        toff_coolstep: 3
+        run_mode: CoolStep 
+        homing_mode: CoolStep 
+        use_enable: true
+        direction_pin: i2so.9:low
+        step_pin: i2so.10
+        disable_pin: i2so.8
+
+
+  a:
+    #4 micro-steps for 1.8 degrees
+    #If 16 teeth on motor / 20 teeth on the roller : 2.778 (4/1.8*20/16)
+    #If same teeth on motor and roller : 2.222
+    steps_per_mm: 2.778
+    max_rate_mm_per_min: 53200.000
+    acceleration_mm_per_sec2: 100000.000
+    max_travel_mm: 360.000
+    soft_limits: false
+    homing: 
+      cycle: 0
+      positive_direction: true
+      mpos_mm: 0.000
+      seek_mm_per_min: 2500.000
+      feed_mm_per_min: 200.000
+      settle_ms: 250.000
+      seek_scaler: 1.500
+      feed_scaler: 5.000
+
+    motor0:
+      limit_neg_pin: gpio.32:low:pu
+      limit_pos_pin: NO_PIN
+      limit_all_pin: NO_PIN
+      hard_limits: false
+      pulloff_mm: 5.000
+      
+      tmc_2209:
+        uart_num: 1     
+        addr: 3
+        r_sense_ohms: 0.220
+        run_amps: 0.6
+        hold_amps: 0.2
+        microsteps: 8
+        stallguard: 0
+        stallguard_debug: false
+        toff_disable: 0
+        toff_stealthchop: 5
+        toff_coolstep: 3
+        run_mode: CoolStep 
+        homing_mode: CoolStep 
+        use_enable: true
+        direction_pin: i2so.13
+        step_pin: i2so.14
+        disable_pin: i2so.12
+
+
+i2so:
+  bck_pin: gpio.22
+  data_pin: gpio.21
+  ws_pin: gpio.17
+
+spi:
+  miso_pin: gpio.19
+  mosi_pin: gpio.23
+  sck_pin: gpio.18
+
+sdcard:
+  cs_pin: gpio.5
+
+i2c0:
+   sda_pin: gpio.25
+   scl_pin: gpio.33
+
+oled:
+   i2c_num: 0
+   i2c_address: 60
+   width: 128
+   height: 64
+   radio_delay_ms: 1000
+
+control:
+  safety_door_pin: gpio.27:low:pu
+  #reset_pin: gpio.12:low:pu
+  feed_hold_pin: gpio.14:low:pu
+  cycle_start_pin: gpio.13:low:pu
+  power_pin: gpio.2:low
+
+coolant:
+  mist_pin: gpio.4
+  delay_ms: 50.000
+
+probe:
+  pin: gpio.36:low
+  check_mode_start: false
+
+macros:
+  startup_line0: 
+  startup_line1: 
+  macro0: 
+  macro1: 
+  macro2: 
+  macro3: 
+
+start:
+  must_home: true
+  check_limits: true
+  deactivate_parking: false
+
+user_outputs:
+
+laser:
+  tool_num: 0
+  speed_map: 0=0.0% 1000=100.0%
+  output_pin: gpio.15
+  enable_pin: gpio.16:low
+  disable_with_s0: false
+  s0_with_disable: false
+  pwm_hz: 15000
+
+arc_tolerance_mm: 0.002
+junction_deviation_mm: 0.010
+verbose_errors: false
+report_inches: false
+enable_parking_override_control: false
+use_line_numbers: false 

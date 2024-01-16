@@ -1,5 +1,5 @@
 name: K40_AvaShield
-board: 4_Ava_Shield_9.x_XYZA_OLED
+board: 4_Ava_Shield_9.2+_XYZA_OLED
 
 kinematics:
   Cartesian:
@@ -59,7 +59,7 @@ axes:
         run_mode: CoolStep 
         homing_mode: CoolStep 
         use_enable: true
-        direction_pin: i2so.1
+        direction_pin: i2so.1:low
         step_pin: i2so.2
         disable_pin: i2so.0
 
