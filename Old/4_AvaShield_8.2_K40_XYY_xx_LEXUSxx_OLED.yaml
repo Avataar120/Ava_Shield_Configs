@@ -71,7 +71,7 @@ axes:
         direction_pin: I2SO.5
         disable_pin: I2SO.4
 
-    motor0:
+    motor1:
       limit_neg_pin: gpio.35:low
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
