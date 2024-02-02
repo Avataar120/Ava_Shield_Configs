@@ -31,7 +31,7 @@ axes:
       feed_scaler: 5.000
 
     motor0:
-      limit_neg_pin: gpio.39
+      limit_neg_pin: gpio.39:low
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: true
@@ -60,7 +60,7 @@ axes:
       feed_scaler: 5.000
 
     motor0:
-      limit_neg_pin: gpio.34
+      limit_neg_pin: gpio.34:low
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: true
