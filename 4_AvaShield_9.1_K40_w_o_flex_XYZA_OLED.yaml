@@ -50,7 +50,7 @@ axes:
         uart_num: 1     
         addr: 0
         r_sense_ohms: 0.220
-        run_amps: 0.6
+        run_amps: 0.5
         hold_amps: 0.2
         microsteps: 8
         stallguard: 0
@@ -94,7 +94,7 @@ axes:
         uart_num: 1     
         addr: 1
         r_sense_ohms: 0.220
-        run_amps: 0.6
+        run_amps: 0.5
         hold_amps: 0.2
         microsteps: 8
         stallguard: 0
@@ -117,7 +117,7 @@ axes:
     max_travel_mm: 20.000
     soft_limits: false
     homing:
-      cycle: 2
+      cycle: 0
       positive_direction: true
       mpos_mm: 9.500
       seek_mm_per_min: 100.000
