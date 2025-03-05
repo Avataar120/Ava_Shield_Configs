@@ -115,7 +115,7 @@ axes:
     max_travel_mm: 20.000
     soft_limits: false
     homing:
-      cycle: 2
+      cycle: 0
       positive_direction: true
       mpos_mm: 9.500
       seek_mm_per_min: 100.000
