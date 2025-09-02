@@ -38,7 +38,7 @@ axes:
 
 
     motor0:
-      limit_neg_pin: gpio.39:low
+      limit_neg_pin: gpio.39
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: true
@@ -48,7 +48,7 @@ axes:
         uart_num: 1     
         addr: 0
         r_sense_ohms: 0.220
-        run_amps: 0.6
+        run_amps: 1
         hold_amps: 0.2
         microsteps: 8
         stallguard: 0
@@ -82,7 +82,7 @@ axes:
 
 
     motor0:
-      limit_neg_pin: gpio.34:low
+      limit_neg_pin: gpio.34
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: true
@@ -92,7 +92,7 @@ axes:
         uart_num: 1     
         addr: 1
         r_sense_ohms: 0.220
-        run_amps: 0.6
+        run_amps: 1
         hold_amps: 0.2
         microsteps: 8
         stallguard: 0
@@ -116,9 +116,9 @@ axes:
       
       tmc_2209:
         uart_num: 1     
-        addr: 1
+        addr: 3
         r_sense_ohms: 0.220
-        run_amps: 0.6
+        run_amps: 1
         hold_amps: 0.2
         microsteps: 8
         stallguard: 0
